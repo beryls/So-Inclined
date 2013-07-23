@@ -1,0 +1,36 @@
+<! shows a coaster and that coaster's park >
+<div class="left">
+<h1>Coaster: <%= @coaster.name %></h1>
+<h3>Park: <%= link_to @park.name, park_path %></h3>
+
+<!-- if a user is logged in, creates check box to be checked if user has ridden coaster
+box can be unchecked to remove coaster from user's list, as well -->
+<% if @user %>
+  <%= form_tag(user_list_path, method: 'put') do %>
+    <%= label_tag "Have you ridden this coaster?" %>
+    <%= check_box_tag "ridden", @user.coasters.include?(@coaster), @user.coasters.include?(@coaster) %>
+    <%= submit_tag 'Update Coaster List' %>
+  <% end %>
+<% end %>
+
+<! lists coaster's attributes >
+<ul>
+  <li>Type: <%= @coaster.material %></li>
+  <li>Height: <%= @coaster.height %> ft</li>
+  <li>Length: <%= @coaster.length %> ft</li>
+  <li>Speed: <%= @coaster.speed %> mph</li>
+  <li>Inversions: <%= @coaster.inversions %></li>
+</ul>
+
+<br/>
+<% if current_user %>
+  <%= link_to "Edit this coaster", edit_coaster_path %>
+<% else %>
+  Log in or sign up to edit this coaster.
+<% end %>
+
+<%= render 'links' %>
+</div>
+
+<! API for Google Maps - set up to show the coaster's park >
+<div class="right">Location of this coaster's park<%= gmaps4rails(@json) %></div>

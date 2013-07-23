@@ -1,0 +1,33 @@
+<div><h1>Add a coaster to the database</h1></div>
+
+<! form to add a new coaster >
+<div class="left">
+<%= form_for @coaster do |f| %>
+
+  <! if the form is filled out incorrectly, this will return an error message, and details of the issues >
+  <%= render 'errors' %>
+
+  <! only name and park_id are necessary to create coaster - need for park_id means that park must be created before coaster >
+  <%= f.label :name %>
+  <%= f.text_field :name %><br/>
+  <%= f.label :park_id %>
+  <%= f.collection_select :park_id, Park.all, :id, :name, prompt: true %><br/>
+  <%= f.label :material %>
+  <%= f.text_field :material %><br/>
+  <%= f.label :height %>
+  <%= f.number_field :height %><br/>
+  <%= f.label :length %>
+  <%= f.number_field :length %><br/>
+  <%= f.label :speed %>
+  <%= f.number_field :speed %><br/>
+  <%= f.label :inversions %>
+  <%= f.number_field :inversions %><br/>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%= render 'links' %>
+</div>
+
+<div class="right"><img src="http://www.joyrides.com/cedar_point/photos/raptor6.jpg"/></div>

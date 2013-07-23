@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All downhill from here...</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag 'gmaps4rails' %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <div id="name"><h1>So Inclined</h1></div>
+  <div id="user_nav">
+  <% if current_user %>
+    Logged in as <%= current_user.user_name %>.
+    <%= link_to "Log out", log_out_path %>
+  <% else %>
+    <%= link_to "Log in", log_in_path %> or
+    <%= link_to "Sign up", sign_up_path %>
+  <% end %>
+</div>
+</header>
+
+<nav class="nav">
+  <a href="/users">Home page</a> |
+  <a href="/parks">Search for parks</a> |
+  <a href="/coasters">Search for coasters</a>
+</nav>
+
+<div class="text-error">
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+</div>
+
+<div id="yield">
+<%= yield %>
+</div>
+
+<%= yield :scripts %>
+
+</body>
+</html>

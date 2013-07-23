@@ -1,0 +1,11 @@
+<h1>Edit profile</h1>
+
+<! form to edit a current user>
+<%= render 'form' %>
+
+<! form to delete user profile >
+<%= form_tag("/users/#{@id}", method: 'delete') do %>
+  <div class="btn btn-danger"><%= submit_tag 'Delete Profile' %></div>
+<% end %>
+
+
