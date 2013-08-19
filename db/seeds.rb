@@ -12,10 +12,10 @@
 # User.delete_all
 
 # might no longer be able to use because of password_hash and password_salt
-# u1 = User.create(user_name: "Beryl", email: "beryl.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
-# u2 = User.create(user_name: "Oren", email: "oren.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
-# u3 = User.create(user_name: "Nancy", email: "nancy.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
-# u4 = User.create(user_name: "Paul", email: "paul.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+u1 = User.create(user_name: "Beryl", email: "beryl.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+u2 = User.create(user_name: "Oren", email: "oren.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+u3 = User.create(user_name: "Nancy", email: "nancy.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+u4 = User.create(user_name: "Paul", email: "paul.schragger@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf")
 
 p1 = Park.create(name: "Cedar Point", city: "Sandusky", state: "OH")
 p2 = Park.create(name: "Dorney Park", city: "Allentown", state: "PA")
