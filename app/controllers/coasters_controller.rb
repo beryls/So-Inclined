@@ -10,6 +10,7 @@ class CoastersController < ApplicationController
     @coasters_parks = Park.find(park_ids)
     # passes queried-for coasters' parks into API for Google Maps
     @json = @coasters_parks.to_gmaps4rails
+    expires_in 3.minutes, public: true
   end
 
   def show
@@ -20,6 +21,7 @@ class CoastersController < ApplicationController
     @park = Park.find(@coaster.park_id)
     # passes coaster's parks into API for Google Maps
     @json = @park.to_gmaps4rails
+    expires_in 3.minutes, public: true
   end
 
   def new

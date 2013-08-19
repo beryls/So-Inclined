@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user_parks = Park.find(park_ids)
     # passes user's parks into API for Google Maps
     @json = @user_parks.to_gmaps4rails
+    expires_in 3.minutes, public: true
   end
 
   def new

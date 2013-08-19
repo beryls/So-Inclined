@@ -5,6 +5,7 @@ class ParksController < ApplicationController
     @parks = Park.where(name: params[:query])
     # passes queried-for parks into API for Google Maps
     @json = @parks.to_gmaps4rails
+    expires_in 3.minutes, public: true
   end
 
   def show
@@ -13,6 +14,7 @@ class ParksController < ApplicationController
     @coasters = Coaster.where(park_id: @park.id)
     # passes park into API for Google Maps
     @json = @park.to_gmaps4rails
+    expires_in 3.minutes, public: true
   end
 
   def new
