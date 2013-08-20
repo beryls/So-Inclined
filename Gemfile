@@ -6,7 +6,10 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg', group: :production
+group :production do
+  gem 'pg'
+  gem 'newrelic_rpm'
+end
 
 # gem 'nokogiri'
 
@@ -63,6 +66,8 @@ gem 'memcachier'
 gem 'rack-cache'
 gem 'dalli'
 gem 'kgio'
+
+gem 'route_downcaser'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
