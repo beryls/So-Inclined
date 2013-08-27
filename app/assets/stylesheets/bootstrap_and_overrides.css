@@ -48,9 +48,17 @@ ul  {
 list-style-type: none;
 }
 
-#intro {
+#intro-left {
   float: left;
   width: 45%;
+}
+
+#intro-right {
+  padding: 15px 15px;
+  float: right;
+  font-size: 16px;
+  text-align: center;
+  width: 50%;
 }
 
 #yield {
@@ -67,7 +75,7 @@ list-style-type: none;
   float: right;
   font-size: 16px;
   text-align: center;
-  width: 50%;
+  width: 55%;
 }
 
 .results {
