@@ -50,7 +50,7 @@ list-style-type: none;
 
 #intro {
   float: left;
-  width: 40%;
+  width: 45%;
 }
 
 #yield {
@@ -67,7 +67,7 @@ list-style-type: none;
   float: right;
   font-size: 16px;
   text-align: center;
-  width: 55%;
+  width: 50%;
 }
 
 .results {
