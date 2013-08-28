@@ -118,10 +118,10 @@ c75 = Coaster.create(name: "Journey to Atlantis", park_id: 14, material: "Steel"
 c76 = Coaster.create(name: "Kraken", park_id: 14, material: "Steel")
 
 
-# u1.coasters = Coaster.all
-# User.all.each do |user|
-#   user.coasters << c1 << c2 << c14 << c15 << c19 << c20 << c23 << c29 << c32 << c34 << c37
-# end
-# u2.coasters << c39 << c46 << c47 << c54 << c56 << c58 << c59 << c60 << c61 << c62 << c64 << c65 << c68 << c74 << c75 << c76
+u1.coasters = Coaster.all
+User.all.each do |user|
+  user.coasters << c1 << c2 << c14 << c15 << c19 << c20 << c23 << c29 << c32 << c34 << c37
+end
+u2.coasters << c39 << c46 << c47 << c54 << c56 << c58 << c59 << c60 << c61 << c62 << c64 << c65 << c68 << c74 << c75 << c76
 
 puts "All done"
